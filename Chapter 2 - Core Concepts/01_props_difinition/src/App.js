@@ -1,18 +1,16 @@
 import "./App.css";
 import CreateTwitte from './components/CreateTwitte';
 import ListTwittes from "./components/ListTwittes";
-import Twitte from "./components/Twiite";
 function App() {
+  const name = "Sou";
+  const message = "Im ok right now !";
+  const ClickFun = () => { console.log("HII im souhail") };
   return (
     <div className="App">
       <h1>New Twitter</h1>
-      <CreateTwitte />
-      <ListTwittes>
-        <Twitte />
-        <Twitte />
-        <Twitte />
-        <h1>rgs</h1>
-      </ListTwittes>
+      {/* <CreateTwitte />
+      <ListTwittes name={name} message={message}/> */}
+      <button onClick={ClickFun}>Click</button>
     </div>
   );
 }

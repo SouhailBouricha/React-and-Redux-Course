@@ -1,8 +1,8 @@
-function Twitte(){
+function Twitte({name,message}){
     return (
         <div className="twitte">
-            <h1>name</h1>
-            <p>message</p>
+            <h1>{name}</h1>
+            <p>{message}</p>
         </div>
     )
 }
