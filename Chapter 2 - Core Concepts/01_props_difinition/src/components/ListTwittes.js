@@ -1,11 +1,11 @@
 import Twitte from "./Twiite";
 
-function ListTwittes({name,message}){
+function ListTwittes({name,message,setName}){
     return (
         <div className="listTwittes">
-            <Twitte name={name} message={message}/>
-            <Twitte name={name} message={message}/>
-            <Twitte name={name} message={message}/>
+            <Twitte name={name} message={message} setName={setName}/>
+            <Twitte name={name} message={message} setName={setName}/>
+            <Twitte name={name} message={message} setName={setName}/>
         </div>
     )
 }
