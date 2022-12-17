@@ -1,5 +1,5 @@
 import TestCompo from "./TestCompnent";
-
+import "./app.css"
 function App() {
   return (
     <div className="App">
