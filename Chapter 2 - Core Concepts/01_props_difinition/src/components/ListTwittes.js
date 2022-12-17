@@ -1,7 +1,9 @@
 function ListTwittes(){
     return (
-
+        <div className="listTwittes">
+            
+        </div>
     )
 }
 
-ex
+export default ListTwittes;
