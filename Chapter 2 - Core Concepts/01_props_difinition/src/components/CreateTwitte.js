@@ -5,7 +5,7 @@ function CreateTwitte(){
         setName(e.target.value);
     }
     const submitForm = (e) => {
-        e.preventdefault();
+        e.preventDefault();
     }
     return (
         <form onSubmit={submitForm}>
