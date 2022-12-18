@@ -1,11 +1,14 @@
 import React,{ useState } from 'react';
 function CreateTwitte(){
     let [name,setName] = useState("");
+    let [twitte,setTwitte] = useState([]);
     const updateName = (e) => {
         setName(e.target.value);
+        e.target.value = "";
     }
     const submitForm = (e) => {
         e.preventDefault();
+        setTwitte([...twitte, name]);
     }
     return (
         <form onSubmit={submitForm}>
