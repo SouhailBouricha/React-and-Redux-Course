@@ -5,10 +5,10 @@ function CreateTwitte(){
         setName(e.target.value);
     }
     const addtwitte = (e) => {
-        
+        e.preventdefault();
     }
     return (
-        <form onSubmit={addtwitte} className="addTwiite">
+        <form onSubmit={addtwitte}>
             <textarea value={name} onChange={updateName} cols="50" rows="5"></textarea>
             <button>Submit</button>
             <h1 onClick={ () => setName("") }>Twitte : {name}</h1>
