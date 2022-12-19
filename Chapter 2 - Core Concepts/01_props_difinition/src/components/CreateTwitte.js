@@ -9,7 +9,7 @@ function CreateTwitte({name, setName, twitte ,setTwitte}){
     }
     return (
         <form onSubmit={submitForm}>
-            <textarea value={name} onChange={updateName} cols="50" rows="5"></textarea>
+            <textarea cols="50" rows="5"></textarea>
             <button type='submit'>Submit</button>
         </form>
     )
