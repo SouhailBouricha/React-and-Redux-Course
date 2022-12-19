@@ -1,7 +1,7 @@
 import React,{ useState } from 'react';
 function CreateTwitte({name, setName, twitte ,setTwitte}){
     const updateName = (e) => {
-        setName(e.target.value);
+        // setName(e.target.value);
     }
     const submitForm = (e) => {
         e.preventDefault();
