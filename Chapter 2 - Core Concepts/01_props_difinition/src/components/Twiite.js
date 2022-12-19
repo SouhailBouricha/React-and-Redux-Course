@@ -1,9 +1,9 @@
-function Twitte({name,message,setName}){
+function Twitte({name,message,setName,twitte,setTwitte}){
     const chanchName = () =>{ setName("Bouricha") }
     return (
         <div className="twitte">
             <h1 onClick={chanchName}>{name}</h1>
-            <p>{message}</p>
+            <p>{twitte}</p>
         </div>
     )
 }
