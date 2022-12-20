@@ -1,4 +1,4 @@
-import React,{ useState } from 'react';
+import React,{ useState, useEffect } from 'react';
 import "./App.css";
 import CreateTwitte from './components/CreateTwitte';
 import ListTwittes from "./components/ListTwittes";
@@ -9,6 +9,9 @@ function App() {
   let [author,setAuthor] = useState("Souhail");
   let [twitte,setTwitte] = useState([]);
   const ClickFun = () => { console.log("HII im souhail") };
+  useEffect(() =>{
+    console.log('Hi use Effect');
+  },[twitte]);
   return (
     <div className="App">
       <h1>New Twitter</h1>

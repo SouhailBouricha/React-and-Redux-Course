@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const StyleDiv = styled.button`
+const StyleDiv = styled.div`
   background: transparent;
   border-radius: 3px;
   border: 2px solid palevioletred;
