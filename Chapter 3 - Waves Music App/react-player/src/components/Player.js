@@ -21,14 +21,14 @@ function Player({ currentsong, isPlaying ,setIsPlaying }) {
       return Math.floor(time / 60) + ":" + ("0" + Math.floor(time % 60)).slice(-2);
     } 
     const RangeHandeler = (e) =>{
-      console.log(e.target.value);
       setSongInfo({...songInfo,currentTime : e.target.value});
+      audioRef.current.currentTime = e.target.value;
     };
     return (
       <div className="player">
         <div className="time-control">
             <p className="start-time">{getTime(songInfo.currentTime)}</p>
-            <input onChange={RangeHandeler} type="range" />
+            <input min='0' max={songInfo.duration} value={songInfo.currentTime} onChange={RangeHandeler} type="range" />
             <p className="end-time">{getTime(songInfo.duration)}</p>
         </div>
         <div className="player-control">
