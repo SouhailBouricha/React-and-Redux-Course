@@ -4,6 +4,9 @@
     box-sizing: border-box;
     background-color: #E1D9D1;
 }
+h1,h2,h3{
+    color: rgb(54, 54, 54);
+}
 
 @import url("./_Song.scss");
 @import url("./_Player.scss");
