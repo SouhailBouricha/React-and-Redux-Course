@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 
-function LibrarySong({}) {
+function LibrarySong({song}) {
     return (
       <div className="song">
-        <img src="" alt="all" />
-        <h3>title</h3>
-        <h4>artist</h4>
+        <img src={song.cover} alt="all" />
+        <h3>{song.name}</h3>
+        <h4>{song.artist}</h4>
       </div>
     );
 }
