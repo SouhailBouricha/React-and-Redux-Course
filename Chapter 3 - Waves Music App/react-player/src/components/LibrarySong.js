@@ -8,7 +8,6 @@ function LibrarySong({}) {
         <h4>artist</h4>
       </div>
     );
-  }
-  
-  export default LibrarySong;
-  
+}
+
+export default LibrarySong;
