@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 function Player({ currentsong, isPlaying ,setIsPlaying }) {
     const audioRef = useRef(null);
-    const [songInfo,setSongInfo] = useState({ currentTime : null, duration : null }); 
+    const [songInfo,setSongInfo] = useState({ currentTime : 0, duration : 0 }); 
     const PlayAduioHandler = () =>{
       if(isPlaying){
         audioRef.current.pause();
