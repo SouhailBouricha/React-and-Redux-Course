@@ -2,13 +2,28 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #E1D9D1;
+    // background-color: #E1D9D1;
 }
+
+body{
+    font-family: 'Lato', sans-serif;
+}
+
 h1,h2,h3{
     color: rgb(54, 54, 54);
 }
-
+h4,h3{
+    font-weight: 400;
+    color: rgb(100, 100, 100);
+}
+.libraryActive{
+    margin-left: 30%;
+}
+.App{
+    transition: all 0.5s ease;
+}
 @import url("./_Song.scss");
 @import url("./_Player.scss");
 @import url("./_Library.scss");
 @import url("./_LibrarySong.scss");
+@import url("./_Nav.scss");

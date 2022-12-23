@@ -1,0 +1,25 @@
+.song{
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem 1rem 2rem;
+    cursor: pointer;
+    background-color: white;
+    img{
+        width: 30%;
+    }
+    &:hover{
+        background-color: rgb(222, 222, 225);
+    }
+}
+.song_Discription{
+    padding-left: 1rem;
+    h3 {
+        font-size: 1rem;
+    }
+    h4 {
+        font-size: 0.7rem;
+    }
+}
+.selected{
+    background-color: rgb(145, 165, 218);
+}

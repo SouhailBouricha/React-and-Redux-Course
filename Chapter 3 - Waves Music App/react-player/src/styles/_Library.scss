@@ -1,0 +1,51 @@
+.Library{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20rem;
+    height: 100%;
+    box-shadow: 2px 2px 50px rgb(204, 204, 204);
+    overflow-y: scroll;
+    transform: translateX(-100%);
+    transition: all 0.5s ease;
+    background: white;
+    opacity: 0;
+    .head_library{
+        min-height: 10vh;
+        display: flex;
+        align-items: center;
+    }
+    h2 {
+        padding-left: 2rem;
+    }
+}
+.library-songs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+*{
+    scrollbar-width: thin;
+    scrollbar-color: rgba(155,155,155,0.5) transparent;
+}
+/* Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+    width: 5px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(155, 155, 155, 0.7);
+  border-radius: 20px;
+  border: transparent;
+}
+.libraryUp{
+    transform: translateX(0);
+    opacity: 1;
+}
+@media screen and (max-width: 768px) {
+    .Library{
+        width: 100%;
+    }
+}

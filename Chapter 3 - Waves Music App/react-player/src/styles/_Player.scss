@@ -12,7 +12,17 @@
     justify-content: space-between;
     input{
         width: 100%;
-        padding: 1rem 0rem;
+        -webkit-appearance: none;
+        cursor: pointer;
+        background: transparent;
+    }
+    input:focus{
+        outline: none;
+    }
+    input::-webkit-slider-thumb{
+        -webkit-appearance: none;
+        width: 16px;
+        height: 16px;
     }
     p{
         padding: 1rem;
@@ -26,5 +36,32 @@
     padding: 1rem;
     svg{
         cursor: pointer;
+    }
+}
+.track{
+    background-color: rgb(166, 199, 199);
+    width: 100%;
+    position: relative;
+    height: 1rem;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+.annimation_track{
+    background-color: rgb(177, 177, 177);
+    width: 100%;
+    position: absolute;
+    height: 1rem;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    transition: transform 1s ease;
+}
+
+@media screen and (max-width: 768px) {
+    .time-control{
+        width: 90%;
+    }
+    .player-control{
+        width: 60%;
     }
 }
