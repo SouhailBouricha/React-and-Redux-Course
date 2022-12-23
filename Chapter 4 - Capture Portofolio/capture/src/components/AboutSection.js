@@ -1,5 +1,6 @@
 import home1 from '../img/home1.png';
 import styled from 'styled-components';
+import {About,Discription,Image,Hide} from "../Styles";
 function AboutSection() {
     return (
       <About>
@@ -24,34 +25,7 @@ function AboutSection() {
       </About>
     );
 }
-const About = styled.div`
-    display: flex;
-    min-height: 90vh;
-    align-items: center;
-    justify-content: center;
-    padding: 5rem 10rem;
-    color: white;
-`;
-const Discription = styled.div`
-    flex: 1;
-    padding-right: 5rem;
-    h2{
-        font-weight: lighter;
-    }
-`;
-const Image = styled.div`
-    flex: 1;
-    overflow: hidden;
-    img{
-        height: 80vh;
-        width: 100%;
-        object-fit: cover;
-    }
-`;
-  
-const Hide = styled.div`
-    overflow: hidden;
-`;
+
   
 export default AboutSection;
   
