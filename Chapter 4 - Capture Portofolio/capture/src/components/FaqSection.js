@@ -1,4 +1,3 @@
-import home1 from '../img/home1.png';
 function FaqSection() {
     return (
       <div className='faq'>
