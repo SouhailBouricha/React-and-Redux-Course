@@ -1,3 +1,5 @@
+import {About} from "../Styles";
+import styled from "styled-components";
 function FaqSection() {
     return (
       <div className='faq'>
@@ -33,6 +35,6 @@ function FaqSection() {
       </div>
     );
 }
-  
+
 export default FaqSection;
   
