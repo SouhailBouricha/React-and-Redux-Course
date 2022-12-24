@@ -20,7 +20,7 @@ export const MovieState = () => {
             '“Lorem Ipsum is simply dummy text of the printing and typesetting industry.”',
         },
         {
-          title: 'Fresh look on a brutal sport.',
+          title: 'Fresh look on a sport.',
           description:
             '“Lorem Ipsum is simply dummy text of the printing and typesetting industry.”',
         },

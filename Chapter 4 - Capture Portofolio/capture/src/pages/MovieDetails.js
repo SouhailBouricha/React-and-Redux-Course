@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useState,useEffect } from "react";
 import { useParams } from "react-router-dom"
 import { MovieState } from "../movieState";
-import {} from 'uu'
+import { v4 as uuidv4 } from 'uuid';
 function MovieDetails() {
     const [movies,setMovies] = useState(MovieState());
     const [movie,setMovie] = useState(null);
@@ -19,8 +19,11 @@ function MovieDetails() {
                 <img src={movie.mainImg} alt="main Img" />
             </HeadLine>
             <Awards>
-                {movie.awards.map((award) => <Award title = {award.title} description = {award.description}/>)}
+                {movie.awards.map((award) => <Award key={uuidv4()} title = {award.title} description = {award.description}/>)}
             </Awards>
+            <ImageDisplay>
+                <img src={movie.secondaryImg} alt="secondaryImg" />
+            </ImageDisplay>
         </Details>
         )}</>);
 }
@@ -45,15 +48,42 @@ const HeadLine = styled.div`
 `;
 
 const Awards = styled.div`
-        color: white;
+        min-height: 80vh;
+        display: flex;
+        margin: 5rem 4rem;
+        align-items: center;
+        justify-content: space-around;
+`;
+const AwardStyle = styled.div`
+        padding: 3rem;
+        h3{
+            font-size: 2rem;
+        }
+        .line{
+            width: 100%;
+            background-color: #23d997;
+            height: 0.5rem;
+            margin: 1rem 0rem;
+        }
+        p{
+            padding: 2rem 0rem;
+        }
+`;
+const ImageDisplay = styled.div`
+       min-height: 50vh;
+       img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+       }
 `;
 const Award = ({title,description}) =>{
     return(
-        <div>
+        <AwardStyle>
             <h3>{title}</h3>
             <div className="line"></div>
             <p>{description}</p>
-        </div>
+        </AwardStyle>
     )
 }
 export default MovieDetails;
