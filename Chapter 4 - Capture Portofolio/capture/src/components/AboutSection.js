@@ -2,6 +2,7 @@ import home1 from '../img/home1.png';
 import {About,Discription,Image,Hide} from "../Styles";
 import { motion } from 'framer-motion';
 import { AboutAnim,fade,PhotoAnim } from '../annimation';
+import Wave from './Wave';
 function AboutSection() {
     return (
       <About>
@@ -23,6 +24,7 @@ function AboutSection() {
         <Image>
             <motion.img variants={PhotoAnim} src={home1} alt="a guy with a camera" />
         </Image>
+        <Wave />
       </About>
     );
 }

@@ -1,4 +1,3 @@
-
 export const PageTransition = {
     hiden: {
         opacity : 0,
