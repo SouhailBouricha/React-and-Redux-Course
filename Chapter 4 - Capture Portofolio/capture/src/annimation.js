@@ -84,3 +84,21 @@ export const Slider = {
         }
     }
 }
+export const scrollReveal = {
+    hiden : {
+        scale : 1.2,
+        opacity : 0,
+        transition : {
+            duration : 0.5,
+            ease : 'easeOut',
+        }
+    },
+    show : {
+        scale : 1,
+        opacity : 1,
+        transition : {
+            duration : 0.5,
+            ease : 'easeOut',
+        }
+    }
+}

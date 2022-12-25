@@ -2,9 +2,12 @@ import {About} from "../Styles";
 import styled from "styled-components";
 import Toggel from "./Toggel";
 import { AnimateSharedLayout } from "framer-motion";
+import { fade } from '../annimation';
+import Scroll  from './Scroll';
 function FaqSection() {
+    const [element,controles] = Scroll();
     return (
-      <Faq>
+      <Faq variants={fade} animate={controles} ref={element}>
         <h2>Any Questions <span>FAQ</span></h2>
         <AnimateSharedLayout>
         <Toggel title="HOW DO I START?">
