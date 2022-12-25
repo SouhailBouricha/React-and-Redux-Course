@@ -4,14 +4,18 @@ import goodtimes from '../img/goodtimes-small.png'
 import theracer from '../img/theracer-small.png'
 import { Link } from "react-router-dom";
 import { PageTransition } from "../annimation";
-import { PhotoAnim,fade } from "../annimation";
+import { PhotoAnim,fade,LineAnim,Slider} from "../annimation";
 import { motion } from "framer-motion";
 function OurWork() {
     return (
       <Work variants={PageTransition} initial="hiden" animate="show" exit="exit"style={{background:"#fff"}}>
+        <Frame1 variants={Slider}></Frame1>
+        <Frame2 variants={Slider}></Frame2>
+        <Frame3 variants={Slider}></Frame3>
+        <Frame4 variants={Slider}></Frame4>
         <Movie>
-          <h2>The Athlete</h2>
-          <div className="line"></div>
+          <motion.h2 variants={fade}>The Athlete</motion.h2>
+          <motion.div variants={LineAnim} className="line"></motion.div>
           <Link to={"/OurWork/the-athlete"}>
             <Hide>
               <motion.img variants={PhotoAnim} src={athlete} alt="athlete" />
@@ -50,14 +54,32 @@ const Movie = styled.div`
   padding-bottom: 10rem;
   .line{
     height: 0.5rem;
-    background-color: #ccc;
+    background-color: #23d997;
     margin-bottom: 3rem;
   }
   img{
-      width: 100%;
-      object-fit: cover;
-      height: 70vh;
+    width: 100%;
+    object-fit: cover;
+    height: 70vh;
   }
+  `;
+const Frame1 = styled(motion.div)`
+  position: fixed;
+  top: 10%;
+  width: 100%;
+  left: 0;
+  height: 100vh;
+  background: #fffebf;
+  z-index: 2;
+`;
+const Frame2 = styled(Frame1)`
+  background: #ff8efb;
+`;
+const Frame3 = styled(Frame1)`
+  background: #8ed2ff;
+`;
+const Frame4 = styled(Frame1)`
+  background: #8effa0;
 `;
 export default OurWork;
   
