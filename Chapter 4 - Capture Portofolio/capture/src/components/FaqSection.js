@@ -1,41 +1,34 @@
 import {About} from "../Styles";
 import styled from "styled-components";
+import Toggel from "./Toggel";
 function FaqSection() {
     return (
       <Faq>
         <h2>Any Questions <span>FAQ</span></h2>
-        <div className="question">
-            <h4>HOW DO I START?</h4>
+        <Toggel title="HOW DO I START?">
             <div className="answer">
                 <p>Lorem ipsum dolor sit amet.</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, animi! </p>
             </div>
-            <div className="faq-line"></div>
-        </div>
-        <div className="question">
-            <h4>Daily Schedule</h4>
+        </Toggel>
+        <Toggel title="Daily Schedule">
             <div className="answer">
                 <p>Lorem ipsum dolor sit amet.</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, animi! </p>
             </div>
-            <div className="faq-line"></div>
-        </div>
-        <div className="question">
-            <h4>Diffrent Payment Methods</h4>
+        </Toggel>
+        <Toggel title="Diffrent Payment Methods">
             <div className="answer">
                 <p>Lorem ipsum dolor sit amet.</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, animi! </p>
             </div>
-            <div className="faq-line"></div>
-        </div>
-        <div className="question">
-            <h4>What Products Do You Offer</h4>
+        </Toggel>
+        <Toggel tit>
             <div className="answer">
                 <p>Lorem ipsum dolor sit amet.</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, animi! </p>
             </div>
-            <div className="faq-line"></div>
-        </div>
+        </Toggel>
       </Faq>
     );
 }
