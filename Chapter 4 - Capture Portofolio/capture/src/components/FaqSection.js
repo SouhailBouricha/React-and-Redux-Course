@@ -1,10 +1,12 @@
 import {About} from "../Styles";
 import styled from "styled-components";
 import Toggel from "./Toggel";
+import { AnimateSharedLayout } from "framer-motion";
 function FaqSection() {
     return (
       <Faq>
         <h2>Any Questions <span>FAQ</span></h2>
+        <AnimateSharedLayout>
         <Toggel title="HOW DO I START?">
             <div className="answer">
                 <p>Lorem ipsum dolor sit amet.</p>
@@ -23,12 +25,13 @@ function FaqSection() {
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, animi! </p>
             </div>
         </Toggel>
-        <Toggel tit>
+        <Toggel title="What Products Do You Offer">
             <div className="answer">
                 <p>Lorem ipsum dolor sit amet.</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, animi! </p>
             </div>
         </Toggel>
+        </AnimateSharedLayout>
       </Faq>
     );
 }
