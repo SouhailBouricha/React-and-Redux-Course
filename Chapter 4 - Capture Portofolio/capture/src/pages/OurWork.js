@@ -3,9 +3,11 @@ import athlete from '../img/athlete-small.png'
 import goodtimes from '../img/goodtimes-small.png'
 import theracer from '../img/theracer-small.png'
 import { Link } from "react-router-dom";
+import { PageTransition } from "../annimation";
+import { motion } from "framer-motion";
 function OurWork() {
     return (
-      <Work>
+      <Work variants={PageTransition} initial="hiden" animate="show" exit="exit"style={{background:"#fff"}}>
         <Movie>
           <h2>The Athlete</h2>
           <div className="line"></div>
@@ -30,7 +32,7 @@ function OurWork() {
       </Work>
     );
 }
-const Work = styled.div`
+const Work = styled(motion.div)`
     min-height: 100vh;
     overflow: hidden;
     padding: 5rem 4rem;

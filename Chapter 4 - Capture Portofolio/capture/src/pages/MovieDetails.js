@@ -3,6 +3,9 @@ import { useState,useEffect } from "react";
 import { useParams } from "react-router-dom"
 import { MovieState } from "../movieState";
 import { v4 as uuidv4 } from 'uuid';
+import { motion } from "framer-motion";
+import { PageTransition } from "../annimation";
+
 function MovieDetails() {
     const [movies,setMovies] = useState(MovieState());
     const [movie,setMovie] = useState(null);
@@ -13,7 +16,7 @@ function MovieDetails() {
     }, [movies, history]);
     return (<>
         {movie && (
-        <Details>
+        <Details variants={PageTransition} initial="hiden" animate="show" exit="exit">
             <HeadLine>
                 <h2>{movie.title}</h2>
                 <img src={movie.mainImg} alt="main Img" />
@@ -27,7 +30,7 @@ function MovieDetails() {
         </Details>
         )}</>);
 }
-const Details = styled.div`
+const Details = styled(motion.div)`
     color: white;
 `;
 const HeadLine = styled.div`
