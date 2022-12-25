@@ -1,26 +1,27 @@
 import home1 from '../img/home1.png';
-import styled from 'styled-components';
 import {About,Discription,Image,Hide} from "../Styles";
+import { motion } from 'framer-motion';
+import { AboutAnim,fade,PhotoAnim } from '../annimation';
 function AboutSection() {
     return (
       <About>
         <Discription>
             <div className="title">
                 <Hide>
-                    <h2>We work to make</h2>
+                    <motion.h2 variants={AboutAnim}>We work to make</motion.h2>
                 </Hide>
                 <Hide>
-                    <h2>your <span>Dream</span> come</h2>
+                    <motion.h2 variants={AboutAnim}>your <span>Dream</span> come</motion.h2>
                 </Hide>
                 <Hide>
-                    <h2>true.</h2>
+                    <motion.h2 variants={AboutAnim}>true.</motion.h2>
                 </Hide>
             </div>
-            <p>Contact us for any photography or videography ideas that you have. we have professionals wuth amazing skills.</p>
-            <button>Contact Us</button>
+            <motion.p variants={fade}>Contact us for any photography or videography ideas that you have. we have professionals wuth amazing skills.</motion.p>
+            <motion.button variants={fade}>Contact Us</motion.button>
         </Discription>
         <Image>
-            <img src={home1} alt="a guy with a camera" />
+            <motion.img variants={PhotoAnim} src={home1} alt="a guy with a camera" />
         </Image>
       </About>
     );
