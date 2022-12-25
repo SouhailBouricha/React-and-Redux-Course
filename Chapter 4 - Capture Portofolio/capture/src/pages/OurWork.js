@@ -6,14 +6,16 @@ import { Link } from "react-router-dom";
 import { PageTransition } from "../annimation";
 import { PhotoAnim,fade,LineAnim,Slider} from "../annimation";
 import { motion } from "framer-motion";
+import Scroll from "../components/Scroll";
 function OurWork() {
+    const [element,controles] = Scroll();
     return (
       <Work variants={PageTransition} initial="hiden" animate="show" exit="exit"style={{background:"#fff"}}>
         <Frame1 variants={Slider}></Frame1>
         <Frame2 variants={Slider}></Frame2>
         <Frame3 variants={Slider}></Frame3>
         <Frame4 variants={Slider}></Frame4>
-        <Movie>
+        <Movie variants={fade} animate={controles} ref={element}>
           <motion.h2 variants={fade}>The Athlete</motion.h2>
           <motion.div variants={LineAnim} className="line"></motion.div>
           <Link to={"/OurWork/the-athlete"}>
@@ -22,14 +24,14 @@ function OurWork() {
             </Hide>
           </Link>
         </Movie>
-        <Movie>
+        <Movie variants={fade} animate={controles} ref={element}>
           <h2>The Racer</h2>
           <div className="line"></div>
           <Link to={"/OurWork/the-racer"}>
             <img src={theracer} alt="theracer" />
           </Link>
         </Movie>
-        <Movie>
+        <Movie variants={fade} animate={controles} ref={element}>
           <h2>Good Times</h2>
           <div className="line"></div>
           <Link to={"/OurWork/good-times"}>
@@ -50,7 +52,7 @@ const Work = styled(motion.div)`
 const Hide = styled(motion.div)`
     overflow: hidden;
 `;
-const Movie = styled.div`
+const Movie = styled(motion.div)`
   padding-bottom: 10rem;
   .line{
     height: 0.5rem;
