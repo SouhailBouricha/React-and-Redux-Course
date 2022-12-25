@@ -4,6 +4,7 @@ import goodtimes from '../img/goodtimes-small.png'
 import theracer from '../img/theracer-small.png'
 import { Link } from "react-router-dom";
 import { PageTransition } from "../annimation";
+import { PhotoAnim,fade } from "../annimation";
 import { motion } from "framer-motion";
 function OurWork() {
     return (
@@ -12,7 +13,9 @@ function OurWork() {
           <h2>The Athlete</h2>
           <div className="line"></div>
           <Link to={"/OurWork/the-athlete"}>
-            <img src={athlete} alt="athlete" />
+            <Hide>
+              <motion.img variants={PhotoAnim} src={athlete} alt="athlete" />
+            </Hide>
           </Link>
         </Movie>
         <Movie>
@@ -39,6 +42,9 @@ const Work = styled(motion.div)`
     h2{
       padding: 1rem 0rem;
     }
+`;
+const Hide = styled(motion.div)`
+    overflow: hidden;
 `;
 const Movie = styled.div`
   padding-bottom: 10rem;
