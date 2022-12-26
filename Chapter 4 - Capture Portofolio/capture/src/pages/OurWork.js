@@ -7,15 +7,19 @@ import { PageTransition } from "../annimation";
 import { PhotoAnim,fade,LineAnim,Slider} from "../annimation";
 import { motion } from "framer-motion";
 import Scroll from "../components/Scroll";
+import ScrollTop from "../components/ScrollTop";
+
 function OurWork() {
     const [element,controles] = Scroll();
     return (
       <Work variants={PageTransition} initial="hiden" animate="show" exit="exit"style={{background:"#fff"}}>
+        <ScrollTop />
         <Frame1 variants={Slider}></Frame1>
         <Frame2 variants={Slider}></Frame2>
         <Frame3 variants={Slider}></Frame3>
         <Frame4 variants={Slider}></Frame4>
-        <Movie variants={fade} animate={controles} ref={element}>
+        {/* variants={fade} animate={controles} ref={element} */}
+        <Movie >
           <motion.h2 variants={fade}>The Athlete</motion.h2>
           <motion.div variants={LineAnim} className="line"></motion.div>
           <Link to={"/OurWork/the-athlete"}>
@@ -24,14 +28,14 @@ function OurWork() {
             </Hide>
           </Link>
         </Movie>
-        <Movie variants={fade} animate={controles} ref={element}>
+        <Movie >
           <h2>The Racer</h2>
           <div className="line"></div>
           <Link to={"/OurWork/the-racer"}>
             <img src={theracer} alt="theracer" />
           </Link>
         </Movie>
-        <Movie variants={fade} animate={controles} ref={element}>
+        <Movie >
           <h2>Good Times</h2>
           <div className="line"></div>
           <Link to={"/OurWork/good-times"}>
@@ -47,6 +51,9 @@ const Work = styled(motion.div)`
     padding: 5rem 4rem;
     h2{
       padding: 1rem 0rem;
+    }
+    @media screen and (max-width:1400px){
+      padding: 2rem;
     }
 `;
 const Hide = styled(motion.div)`

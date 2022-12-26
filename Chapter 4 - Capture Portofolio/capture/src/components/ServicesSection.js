@@ -5,12 +5,12 @@ import teamwork from '../img/teamwork.svg';
 import home2 from '../img/home2.png';
 import {About,Discription,Image} from "../Styles";
 import styled from 'styled-components';
-import { scrollReveal } from '../annimation';
+import { scrollReveal,fade } from '../annimation';
 import Scroll  from './Scroll';
 function ServicesSection() {
     const [element,controles] = Scroll();
     return (
-        <Servises variants={scrollReveal} animate={controles} ref={element}>
+        <Servises variants={fade} animate={controles} ref={element}>
             <Discription>
                 <h2>High <span>quality</span> services</h2>
                 <Cards>
@@ -53,6 +53,8 @@ function ServicesSection() {
 }
 
 const Servises = styled(About)`
+    width: 100%;
+    overflow-x: hidden;
     h2{
         padding-bottom: 5rem;
     }
@@ -63,6 +65,12 @@ const Servises = styled(About)`
 `;
 const Card = styled.div`
     flex-basis: 20rem;
+    @media screen and (max-width:1400px){
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
     .icon{
         display: flex;
         align-items: center;    
@@ -73,10 +81,14 @@ const Card = styled.div`
             padding: 1rem;
         }    
     }
+    
 `;
 const Cards = styled.div`
     display: flex;
     flex-wrap: wrap;
+    @media screen and (max-width:1400px){
+        justify-content: center;
+    }
 `;
 
 export default ServicesSection;

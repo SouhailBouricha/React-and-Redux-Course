@@ -5,7 +5,7 @@ import { MovieState } from "../movieState";
 import { v4 as uuidv4 } from 'uuid';
 import { motion } from "framer-motion";
 import { PageTransition } from "../annimation";
-
+import ScrollTop from "../components/ScrollTop";
 function MovieDetails() {
     const [movies,setMovies] = useState(MovieState());
     const [movie,setMovie] = useState(null);
@@ -15,6 +15,7 @@ function MovieDetails() {
         setMovie(result);
     }, [movies, history]);
     return (<>
+        <ScrollTop />
         {movie && (
         <Details variants={PageTransition} initial="hiden" animate="show" exit="exit">
             <HeadLine>
@@ -42,6 +43,9 @@ const HeadLine = styled.div`
         top: 10%;
         left: 50%;
         transform: translate(-50%,-10%);
+        @media screen and (max-width:1400px){
+            font-size: 200%;
+        }
     }
     img{
         width: 100%;
@@ -56,6 +60,10 @@ const Awards = styled.div`
         margin: 5rem 4rem;
         align-items: center;
         justify-content: space-around;
+        @media screen and (max-width:1400px){
+            display: block;
+            margin: 2rem;
+        }
 `;
 const AwardStyle = styled.div`
         padding: 3rem;
