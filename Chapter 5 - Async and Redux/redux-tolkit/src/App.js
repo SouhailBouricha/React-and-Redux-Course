@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { useSelector } from 'react-redux/es/exports';
-import { useDispatch } from 'react-redux/es/exports';
+import { useSelector,useDispatch } from 'react-redux';
 import { actions } from './store';
 function App() {
   const counter = useSelector((state) => state.counter);

@@ -1,6 +1,4 @@
-import { configureStore } from "@reduxjs/toolkit";
-import { createSlice } from "@reduxjs/toolkit/dist/createSlice";
-
+import { configureStore,createSlice } from "@reduxjs/toolkit"
 const counterSlice = createSlice({
     name : "counter",
     initialState : { counter : 0},
