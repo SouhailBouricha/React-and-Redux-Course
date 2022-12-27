@@ -10,7 +10,7 @@ const counterSlice = createSlice({
             state.counter--
         },
         AddBY(state,actions){
-            state.counter =+ 10
+            state.counter =+ 100
         }
     }
 }) 
