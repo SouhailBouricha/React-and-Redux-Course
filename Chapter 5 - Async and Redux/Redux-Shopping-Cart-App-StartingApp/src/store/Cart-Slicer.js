@@ -25,6 +25,9 @@ const cartSlice = createSlice({
                 })
                 state.Totalquantity++;
             }
+        },
+        ShowTheCart(state,actions){
+            state.showCart = !state.showCart;
         }
     }
 })
