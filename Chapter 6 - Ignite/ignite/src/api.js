@@ -2,11 +2,11 @@ const base_api = "https://api.rawg.io/api/";
 
 const getCurrentMonth = () =>{
     const month = new Date().getMonth() + 1;
-    return month > 9 ? month : $`0${month}`; 
+    return month > 9 ? month : `0${month}`; 
 }
 const getCurrentDay = () =>{
     const day = new Date().getDate();
-    return day > 9 ? day : $`0${day}`; 
+    return day > 9 ? day : `0${day}`; 
 }
 const getCurrentYear = new Date().getFullYear();
 

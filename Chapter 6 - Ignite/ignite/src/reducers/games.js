@@ -7,7 +7,7 @@ const init = {
 const gameReducr = (state = init,actions) =>{
     switch(actions.type){
         case "Fetch_Games":
-            return {...state};
+            return {...state, popular : actions.payload.data};
         default:
             return {...state};
     }
