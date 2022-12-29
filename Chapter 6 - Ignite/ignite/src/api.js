@@ -14,12 +14,10 @@ const getCurrentYear = new Date().getFullYear();
 const currntYear = getCurrentYear;
 const currntMonth = getCurrentMonth();
 const currntDay = getCurrentDay();
-const currntDate = `${currntYear}-${currntMonth}-${currntMonth}`;
-const nextYear = `${currntYear + 1}-${currntMonth}-${currntMonth}`;
-const lastYear = `${currntYear - 1}-${currntMonth}-${currntMonth}`;
+const currntDate = `${currntYear}-${currntMonth}-${currntDay}`;
+const nextYear = `${currntYear + 1}-${currntMonth}-${currntDay}`;
+const lastYear = `${currntYear - 1}-${currntMonth}-${currntDay}`;
 
 const popular_games = `games?dates=${lastYear},${currntDate}&ordering=-rating&page_size=10&key=53bc2ad7bf46402cae35958fe9a9cd92`;
 
-const populatGamesURL = () => `${base_api}${popular_games}`;
-
-console.log(populatGamesURL());
+export const populatGamesURL = () => `${base_api}${popular_games}`;
