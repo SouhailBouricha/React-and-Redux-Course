@@ -12,3 +12,12 @@
   font-family: monospace;
   font-size: 30px;
 }
+.Logout{
+  padding: 10px;
+  background-color: orangered;
+  border: none;
+  margin-top: 0;
+}
+.Logout:hover{
+  background-color: rgb(0, 6, 59);
+}
