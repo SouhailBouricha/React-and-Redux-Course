@@ -8,6 +8,15 @@ const cartSlice = createSlice({
         showCart : false,
     }
     , reducers : {
+        replaceData(state,actions){
+            console.log(actions.payload);
+            if(actions.payload.itemslist){
+                state.itemslist = actions.payload.itemslist;
+                state.Totalquantity = actions.payload.Totalquantity;
+                state.showCart = false;
+            }
+        }
+        ,
         addCart(state,actions){
             const newItem = actions.payload;
             const existItem = state.itemslist.find((item) => item.id === newItem.id);

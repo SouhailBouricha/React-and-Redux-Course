@@ -6,9 +6,11 @@ import { useSelector } from "react-redux";
 const Layout = () => {
   let itemslist = useSelector(state => state.cart.itemslist);
   let total = 0;
-  itemslist.map(i => {
-      total = total + i.totalprice;
-  });
+  if(itemslist){
+    itemslist.map(i => {
+        total = total + i.totalprice;
+    });
+  }
 
   return (
     <React.Fragment>
