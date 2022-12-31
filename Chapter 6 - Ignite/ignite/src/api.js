@@ -27,4 +27,4 @@ export const populatGamesURL = () => `${base_api}${popular_games}`;
 export const upComingGamesURL = () => `${base_api}${upComing_games}`;
 export const newGamesURL = () => `${base_api}${new_games}`;
 export const DetailsGamesURL = (id) => `${base_api}games/${id}?key=53bc2ad7bf46402cae35958fe9a9cd92`;
-export const DetailsGamesURL = (id) => `${base_api}games/${id}?key=53bc2ad7bf46402cae35958fe9a9cd92`;
+export const screenshotsGamesURL = (id) => `${base_api}games/${id}/screenshots?key=53bc2ad7bf46402cae35958fe9a9cd92`;
