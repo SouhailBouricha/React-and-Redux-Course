@@ -1,11 +1,11 @@
 const init = {
-    details_Games : { },
+    details : { },
 }
 const DetailsGameReducer = (state = init,actions) =>{
     switch(actions.type){
         case "Details_Games":
             return {...state, 
-            details_Games : actions.payload.details_Games,   
+            details : actions.payload.Details_Games,   
         };
         default:
             return {...state};
