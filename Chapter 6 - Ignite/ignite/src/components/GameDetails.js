@@ -146,6 +146,7 @@ const Ratings = styled(motion.div)`
         width: 2rem;
         height: 2rem;
         display: inline;
+        border: 0ch red;
     }
 `;
 export default GameDetails;
