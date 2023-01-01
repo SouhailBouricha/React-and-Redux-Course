@@ -23,6 +23,15 @@ function GameDetails({name, background_image, released,pathId}){
     }
     const GetStars = () =>{
         const stars = [];
+        const rating = details.rating;
+        for (let i = 1; i <= 5; i++) {
+            if(i <= rating){
+                stars.push(<img src={starFull} key={i} alt={'starFull'} />);
+            }
+            else{
+                stars.push(<img src={starEmpty} key={i} alt={'starEmpty'} />);
+            }
+        }
     }
     const GetIcon = (name) =>{
         switch(name){
