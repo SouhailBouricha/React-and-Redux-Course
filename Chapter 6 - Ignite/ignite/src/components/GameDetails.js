@@ -32,6 +32,7 @@ function GameDetails({name, background_image, released,pathId}){
                 stars.push(<img src={starEmpty} key={i} alt={'starEmpty'} />);
             }
         }
+        return stars;
     }
     const GetIcon = (name) =>{
         switch(name){
