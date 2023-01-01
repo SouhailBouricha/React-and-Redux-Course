@@ -6,16 +6,20 @@ import styled from "styled-components";
 import Game from "../components/Game";
 import { loadDetailsGames } from "../actions/gameDetailes";
 import GameDetails from "../components/GameDetails";
+import { useLocation } from "react-router-dom";
 function Home(){
     const dispatch = useDispatch();
     useEffect(() =>{
     dispatch(loadGames());
-    dispatch(loadDetailsGames(2));
+    // dispatch(loadDetailsGames(2));
     },[dispatch])
     const {popular,newGames,upComing} = useSelector(state => state.game);
+    const location = useLocation();
+    const path = location.pathname.split('/')[2]; 
+    console.log(path);
     return(
         <GameList>
-            <GameDetails/>
+            {path && <GameDetails/>}
             <h2>New Games</h2>
             <Games>
                 {newGames.map(game => <Game key={game.id} id={game.id} name={game.name} background_image={game.background_image} released={game.released} />)}

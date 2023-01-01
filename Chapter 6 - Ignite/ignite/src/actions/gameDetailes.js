@@ -3,6 +3,9 @@ import axios from "axios";
 
 
 export const loadDetailsGames = (id) => async (dispatch) =>{
+    dispatch({
+        type : "is_Loading"
+    })
     const Details_Games = await axios.get(DetailsGamesURL(id));
     const screenshots_Games = await axios.get(screenshotsGamesURL(id));
     dispatch({

@@ -2,8 +2,10 @@ import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 function GameDetails({name, background_image, released,id}){
-    const { details,screenshots} = useSelector(state => state.details);
+    const { details,screenshots, isLoading} = useSelector(state => state.details);
     return(
+        <>
+        {!isLoading && (
         <CardSahdow>
             <Details>
                 <Stats>
@@ -29,6 +31,8 @@ function GameDetails({name, background_image, released,id}){
                 </div>
             </Details>
         </CardSahdow>
+        )}
+        </>
     )
 }
 const CardSahdow = styled(motion.div)`
