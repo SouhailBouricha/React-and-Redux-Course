@@ -121,6 +121,11 @@ const Stats = styled(motion.div)`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    img{
+        width: 2rem;
+        height: 2rem;
+        display: inline;
+    }
 `;
 const Info = styled(motion.div)`
     text-align: center;
@@ -142,11 +147,6 @@ const Description = styled(motion.div)`
     margin: 5rem 0rem;
 `;
 const Ratings = styled(motion.div)`
-    img{
-        width: 2rem;
-        height: 2rem;
-        display: inline;
-        border: 0ch red;
-    }
+   
 `;
 export default GameDetails;
