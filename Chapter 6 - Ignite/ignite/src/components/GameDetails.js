@@ -6,24 +6,24 @@ function GameDetails({name, background_image, released,id}){
     return(
         <CardSahdow>
             <Details>
-                <div className="stats">
+                <Stats>
                     <div className="ratings">
                         <h3>{details.name}</h3>
                         <p>Rating : {details.rating}</p>
                     </div>
-                    <div className="info">
+                    <Info>
                         <h3>Platforms</h3>
-                        <div className="platforms">
+                        <Platforms>
                             {details.platforms ? details.platforms.map(data => (<h3 key={data.platform.id}>{data.platform.name}</h3>)) : []}
-                        </div>
-                    </div>
-                </div>
-                <div className="media">
+                        </Platforms>
+                    </Info>
+                </Stats>
+                <Media>
                     <img src={details.background_image} alt=""  />
-                </div>
-                <div className="description">
+                </Media>
+                <Description>
                     <p>{details.description_raw}</p>
-                </div>
+                </Description>
                 <div className="gallery">
                     {screenshots.results ? screenshots.results.map(screen => <img src={screen.image} alt="screen.image" key={screen.id} />) : []}
                 </div>
@@ -52,7 +52,7 @@ const CardSahdow = styled(motion.div)`
 const Details = styled(motion.div)`
     width: 80%;
     border-radius: 1rem;
-    padding: 2rem 10rem;
+    padding: 2rem 5rem;
     background-color: white;
     position: absolute;
     left: 10%;
@@ -60,5 +60,29 @@ const Details = styled(motion.div)`
     img{
         width: 100%;
     }
+`;
+const Stats = styled(motion.div)`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+`;
+const Info = styled(motion.div)`
+    text-align: center;
+`;
+const Platforms = styled(motion.div)`
+    display: flex;
+    justify-content: space-evenly;
+    img{
+        margin-left: 3rem;
+    }
+`;
+const Media = styled(motion.div)`
+    margin-top: 5rem;
+    img{
+        width: 100%;
+    }
+`;
+const Description = styled(motion.div)`
+    margin: 5rem 0rem;
 `;
 export default GameDetails;
