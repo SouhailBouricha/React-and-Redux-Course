@@ -2,8 +2,14 @@ import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-
-function GameDetails({name, background_image, released,id}){
+import { smallImage } from "../utils";
+import apple from '../img/apple.svg';
+import gamepad from '../img/gamepad.svg';
+import nintendo from '../img/nintendo.svg';
+import playstation from '../img/playstation.svg';
+import steam from '../img/steam.svg';
+import xbox from '../img/xbox.svg';
+function GameDetails({name, background_image, released,pathId}){
     const { details,screenshots, isLoading} = useSelector(state => state.details);
     const navigate = useNavigate();
     const shadowHandler = (e) =>{
@@ -12,31 +18,51 @@ function GameDetails({name, background_image, released,id}){
             navigate("/");
         }
     }
+    const GetIcon = (name) =>{
+        switch(name){
+            case "Xbox One":
+                return xbox;
+            case "Xbox Series S/X":
+                return xbox;
+            case "PlayStation 4":
+                return playstation;
+            case "PlayStation 5":
+                return playstation;
+            case "PC":
+                return steam;
+            case "Nintebdo Switch":
+                return nintendo;
+            case "iOS":
+                return apple;
+            default:
+                return gamepad;
+        }
+    }
     return(
         <>
         {!isLoading && (
         <CardSahdow onClick={shadowHandler} className="shadow">
-            <Details>
+            <Details layoutId={pathId}>
                 <Stats>
                     <div className="ratings">
-                        <h3>{details.name}</h3>
+                        <motion.h3 layoutId={`text ${pathId}`}>{details.name}</motion.h3>
                         <p>Rating : {details.rating}</p>
                     </div>
                     <Info>
                         <h3>Platforms</h3>
                         <Platforms>
-                            {details.platforms ? details.platforms.map(data => (<h3 key={data.platform.id}>{data.platform.name}</h3>)) : []}
+                            {details.platforms ? details.platforms.map(data => (<img alt={data.platform.name} src={GetIcon(data.platform.name)} key={data.platform.id}/>)) : []}
                         </Platforms>
                     </Info>
                 </Stats>
                 <Media>
-                    <img src={details.background_image} alt=""  />
+                    <motion.img layoutId={`image ${pathId}`} src={smallImage(details.background_image,1280)} alt=""  />
                 </Media>
                 <Description>
                     <p>{details.description_raw}</p>
                 </Description>
                 <div className="gallery">
-                    {screenshots.results ? screenshots.results.map(screen => <img src={screen.image} alt="screen.image" key={screen.id} />) : []}
+                    {screenshots.results ? screenshots.results.map(screen => <img src={smallImage(screen.image,1280)} alt="screen.image" key={screen.id} />) : []}
                 </div>
             </Details>
         </CardSahdow>
@@ -85,7 +111,7 @@ const Info = styled(motion.div)`
 const Platforms = styled(motion.div)`
     display: flex;
     justify-content: space-evenly;
-    img{
+    img:not(:nth-child(1)){
         margin-left: 3rem;
     }
 `;

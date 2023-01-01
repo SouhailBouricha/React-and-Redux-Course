@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { loadDetailsGames } from "../actions/gameDetailes";
 import { Link } from "react-router-dom";
-
+import { smallImage } from "../utils";
 function Game({name, background_image, released,id}){
     const dispatch = useDispatch();
     const detailsHandler = () =>{
@@ -11,11 +11,11 @@ function Game({name, background_image, released,id}){
         document.body.style.overflow = "hidden";
     }
     return(
-        <GameStyled onClick={detailsHandler}>
+        <GameStyled layoutId={String(id)} onClick={detailsHandler}>
             <Link to={`/game/${id}`}>
-                <h3>{name}</h3>
+                <motion.h3 layoutId={`text ${String(id)}`}>{name}</motion.h3>
                 <p>{released}</p>
-                <img src={background_image} alt="background" />
+                <motion.img layoutId={`image ${String(id)}`} src={smallImage(background_image,640)} alt="background" />
             </Link>
         </GameStyled>
     )
