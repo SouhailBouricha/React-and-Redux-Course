@@ -60,10 +60,11 @@ function GameDetails({name, background_image, released,pathId}){
         <CardSahdow onClick={shadowHandler} className="shadow">
             <Details layoutId={pathId}>
                 <Stats>
-                    <div className="ratings">
+                    <Ratings>
                         <motion.h3 layoutId={`text ${pathId}`}>{details.name}</motion.h3>
                         <p>Rating : {details.rating}</p>
-                    </div>
+                        {GetStars()}
+                    </Ratings>
                     <Info>
                         <h3>Platforms</h3>
                         <Platforms>
@@ -139,5 +140,12 @@ const Media = styled(motion.div)`
 `;
 const Description = styled(motion.div)`
     margin: 5rem 0rem;
+`;
+const Ratings = styled(motion.div)`
+    img{
+        width: 2rem;
+        height: 2rem;
+        display: inline;
+    }
 `;
 export default GameDetails;
