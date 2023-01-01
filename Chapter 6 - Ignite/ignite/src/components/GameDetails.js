@@ -9,6 +9,9 @@ import nintendo from '../img/nintendo.svg';
 import playstation from '../img/playstation.svg';
 import steam from '../img/steam.svg';
 import xbox from '../img/xbox.svg';
+import starEmpty from '../img/star-empty.png';
+import starFull from '../img/star-full.png';
+
 function GameDetails({name, background_image, released,pathId}){
     const { details,screenshots, isLoading} = useSelector(state => state.details);
     const navigate = useNavigate();
@@ -17,6 +20,9 @@ function GameDetails({name, background_image, released,pathId}){
             document.body.style.overflow = "auto";
             navigate("/");
         }
+    }
+    const GetStars = () =>{
+        const stars = [];
     }
     const GetIcon = (name) =>{
         switch(name){
