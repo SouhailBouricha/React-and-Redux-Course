@@ -1,12 +1,21 @@
 import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
+
 function GameDetails({name, background_image, released,id}){
     const { details,screenshots, isLoading} = useSelector(state => state.details);
+    const navigate = useNavigate();
+    const shadowHandler = (e) =>{
+        if(e.target.classList.contains("shadow")){
+            document.body.style.overflow = "auto";
+            navigate("/");
+        }
+    }
     return(
         <>
         {!isLoading && (
-        <CardSahdow>
+        <CardSahdow onClick={shadowHandler} className="shadow">
             <Details>
                 <Stats>
                     <div className="ratings">

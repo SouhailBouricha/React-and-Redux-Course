@@ -16,7 +16,6 @@ function Home(){
     const {popular,newGames,upComing} = useSelector(state => state.game);
     const location = useLocation();
     const path = location.pathname.split('/')[2]; 
-    console.log(path);
     return(
         <GameList>
             {path && <GameDetails/>}
