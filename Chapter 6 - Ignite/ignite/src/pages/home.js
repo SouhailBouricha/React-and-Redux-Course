@@ -13,7 +13,7 @@ function Home(){
     dispatch(loadGames());
     // dispatch(loadDetailsGames(2));
     },[dispatch])
-    const {popular,newGames,upComing} = useSelector(state => state.game);
+    const {popular,newGames,upComing,search} = useSelector(state => state.game);
     const location = useLocation();
     const path = location.pathname.split('/')[2]; 
     return(
@@ -22,6 +22,16 @@ function Home(){
                 <AnimatePresence>
                     {path && <GameDetails pathId={path}/>}
                 </AnimatePresence>
+                {
+                    search.length ? (
+                        <>
+                        <h2>Search Games</h2>
+                        <Games>
+                            {search.map(game => <Game key={game.id} id={game.id} name={game.name} background_image={game.background_image} released={game.released} />)}
+                        </Games>
+                        </>
+                    ) : ""
+                }   
                 <h2>New Games</h2>
                 <Games>
                     {newGames.map(game => <Game key={game.id} id={game.id} name={game.name} background_image={game.background_image} released={game.released} />)}

@@ -12,6 +12,14 @@ const gameReducr = (state = init,actions) =>{
             newGames : actions.payload.new_Games,
             upComing : actions.payload.upComing_Games,
         };
+        case "Fetch_Search":
+            return {...state, 
+            search : actions.payload.search 
+        };
+        case "Clear_Search":
+            return {...state, 
+            search : [] 
+        };
         default:
             return {...state};
     }
